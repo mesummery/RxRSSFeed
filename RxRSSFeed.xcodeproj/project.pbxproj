@@ -169,8 +169,8 @@
 		773318F81C3A98BB003D8D9C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				773318F91C3A98BB003D8D9C /* Detail */,
 				773318FB1C3A98BB003D8D9C /* List */,
+				773318F91C3A98BB003D8D9C /* Detail */,
 			);
 			path = Controller;
 			sourceTree = "<group>";

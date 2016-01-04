@@ -14,6 +14,7 @@ import DGElasticPullToRefresh
 //// List Table View
 class ListTable: UITableView {
     
+    // FIXME: ライブラリのバグで使用停止中
     /// LoadView
     let loadView = DGElasticPullToRefreshLoadingViewCircle()
     

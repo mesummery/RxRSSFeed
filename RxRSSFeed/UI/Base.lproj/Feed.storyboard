@@ -30,7 +30,7 @@
         <!--Latest Sketch 100-->
         <scene sceneID="NPL-4o-1sJ">
             <objects>
-                <viewController id="Mj4-aP-LHj" customClass="ListController" customModule="MAF_RSSFeed" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Mj4-aP-LHj" customClass="ListController" customModule="RxRSSFeed" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="KmR-6Z-Cio"/>
                         <viewControllerLayoutGuide type="bottom" id="NLX-r3-MR8"/>
@@ -42,11 +42,11 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="kcy-yb-lVa">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="240" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yvD-xk-ggb" customClass="ListTable" customModule="MAF_RSSFeed" customModuleProvider="target">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="240" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yvD-xk-ggb" customClass="ListTable" customModule="RxRSSFeed" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
-                                <color key="backgroundColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92549019610000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ListCell" rowHeight="240" id="j6U-WM-bxn" customClass="ListCell" customModule="MAF_RSSFeed" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ListCell" rowHeight="240" id="j6U-WM-bxn" customClass="ListCell" customModule="RxRSSFeed" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="240"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="j6U-WM-bxn" id="OxR-z1-hRi">
@@ -143,7 +143,7 @@
         <!--Detail Controller-->
         <scene sceneID="O7z-NN-a2z">
             <objects>
-                <viewController id="Yxt-JH-clW" customClass="DetailController" customModule="MAF_RSSFeed" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Yxt-JH-clW" customClass="DetailController" customModule="RxRSSFeed" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Uai-Aa-fsG"/>
                         <viewControllerLayoutGuide type="bottom" id="eXI-2k-Ter"/>

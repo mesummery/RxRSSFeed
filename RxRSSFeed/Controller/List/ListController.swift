@@ -16,6 +16,9 @@ class ListController: UIViewController, UITableViewDelegate {
     /// Table View
     @IBOutlet private weak var tableView: ListTable!
     
+    /// Pull To Refresh
+    private let refresh = UIRefreshControl()
+    
     /// View Model
     private let viewModel = ListViewModel()
 
@@ -39,10 +42,6 @@ class ListController: UIViewController, UITableViewDelegate {
         super.didReceiveMemoryWarning()
     }
     
-    deinit {
-        tableView.removePullToRefresh()
-    }
-    
     /**
     View Model Setting
     */
@@ -57,6 +56,7 @@ class ListController: UIViewController, UITableViewDelegate {
      RX bind
      */
     func bind() {
+        // Connection
         viewModel.entries.asObservable().filter { x in
             // 初期化の際にsubscribeをさけるためfilter
             // 配列の要素数が0件より多くなったときにsubscribeを実施
@@ -64,6 +64,7 @@ class ListController: UIViewController, UITableViewDelegate {
             }.subscribe(onNext: { [unowned self] x in
                 // 更新
                 Progress.dismiss()
+                self.refresh.endRefreshing()
                 self.tableView.reloadData()
                 }, onError: { error in
                     // エラー
@@ -73,19 +74,20 @@ class ListController: UIViewController, UITableViewDelegate {
                 }) { () in
                     
             }.addDisposableTo(disposeBag)
+        
+        // Pull Refresh
+        refresh.rx_controlEvent(.ValueChanged).subscribeNext { [unowned self] x -> Void in
+            // プルリフレッシュを購読
+            self.viewModel.reloadData()
+        }.addDisposableTo(disposeBag)
     }
     
     /**
     Pull To Refresh Setting
     */
-    func setupPullRefresh() {
-        tableView.pullToRefresh { [unowned self] () -> Void in
-            self.tableView.switchScrollEnable()
-            if self.tableView.hasContents() {
-                // tableView has contents
-                self.viewModel.reloadData()
-            }
-        }
+    private func setupPullRefresh() {
+        refresh.tintColor = UIColor.whiteColor()
+        tableView.addSubview(refresh)
     }
     
     // MARK: Navigation
