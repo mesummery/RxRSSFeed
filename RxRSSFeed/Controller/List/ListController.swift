@@ -48,7 +48,6 @@ class ListController: UIViewController, UITableViewDelegate {
     func setupViewModel() {
         tableView.dataSource = viewModel
         // Load
-        Progress.show()
         viewModel.reloadData()
     }
     
@@ -63,7 +62,6 @@ class ListController: UIViewController, UITableViewDelegate {
             return !x.isEmpty
             }.subscribe(onNext: { [unowned self] x in
                 // 更新
-                Progress.dismiss()
                 self.refresh.endRefreshing()
                 self.tableView.reloadData()
                 }, onError: { error in
@@ -75,6 +73,7 @@ class ListController: UIViewController, UITableViewDelegate {
                     
             }.addDisposableTo(disposeBag)
         
+
         // Pull Refresh
         refresh.rx_controlEvent(.ValueChanged).subscribeNext { [unowned self] x -> Void in
             // プルリフレッシュを購読

@@ -220,8 +220,8 @@
 		773319031C3A98BB003D8D9C /* Request */ = {
 			isa = PBXGroup;
 			children = (
-				773319041C3A98BB003D8D9C /* FeedRequest.swift */,
 				773319051C3A98BB003D8D9C /* RequestBase.swift */,
+				773319041C3A98BB003D8D9C /* FeedRequest.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -229,10 +229,10 @@
 		773319061C3A98BB003D8D9C /* Response */ = {
 			isa = PBXGroup;
 			children = (
+				7733190A1C3A98BB003D8D9C /* ResponseBase.swift */,
+				773319091C3A98BB003D8D9C /* FeedResponse.swift */,
 				773319071C3A98BB003D8D9C /* Entry.swift */,
 				773319081C3A98BB003D8D9C /* Feed.swift */,
-				773319091C3A98BB003D8D9C /* FeedResponse.swift */,
-				7733190A1C3A98BB003D8D9C /* ResponseBase.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";

@@ -36,7 +36,7 @@ class ListViewModel: NSObject, UITableViewDataSource {
     Reload
     */
     func reloadData() {
-        request.get().subscribe(onNext: { [weak self] x in
+        request.connect().subscribe(onNext: { [weak self] x in
             self?.entries.value = x.feed.entries
             }, onError: { error in
                 
